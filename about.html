@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Entrepreneur & Digital Business Owner</title>
+    <meta name="description" content="Learn about my journey from mechanical engineering to building diverse business ventures across retail, digital platforms, and publishing.">
+    <script src="assets/js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"  crossorigin="anonymous"  referrerpolicy="no-referrer">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .page-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* Main Content */
+        .profile-image img {
+            width: 240px;       /* adjust size */
+             height: 240px;      /* adjust size */
+             border-radius: 50%; /* makes it circular */
+              object-fit: cover;  /* crops the image nicely */    
+            }
+
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .content-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .profile-image {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #667eea20 0%, #764ba220 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 3rem 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .highlight h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Journey Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background: inherit;
+            width: 50%;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border: 3px solid #fff;
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -11px;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -11px;
+        }
+
+        .timeline-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+        }
+
+        .timeline-date {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .timeline-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f0f0f0;
+            text-align: center;
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .skill-list {
+            list-style: none;
+            color: #666;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .philosophy h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .philosophy-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            padding: 80px 0;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-hero p {
+                font-size: 1.1rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 19px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(even)::after {
+                left: 19px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo"><i class="fas fa-briefcase"></i> Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html" class="active"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="ventures.html"><i class="fas fa-building"></i> Ventures</a></li>
+                <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1><i class="fas fa-id-card"></i> About Me</h1>
+            <p>The journey from engineering to entrepreneurship</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Introduction Section -->
+            <section class="content-section">
+                <div class="two-column">
+                    <div class="profile-image">
+                       <!-- <i class="fas fa-user-circle fa-6x"></i>-->
+                        <img src="assets/images/profile_image.JPG" alt="Profile Image">
+                    </div>
+                    <div class="about-text">
+                        <h2><i class="fas fa-lightbulb"></i> Building Businesses That Bridge Worlds</h2>
+                        <p>
+                            With a Mechanical Engineering degree from Ahmadu Bello University and over seven years 
+                            of hands-on business experience, I've evolved from understanding how machines work 
+                            to understanding how markets work.
+                        </p>
+                        <p>
+                            My journey began in retail at Inusa's Haberdashery, where I learned the fundamentals 
+                            of sales, procurement, and customer relationships. From Sales Representative to Store Manager 
+                            to Procurement Officer, I gained invaluable insights into what makes businesses tick 
+                            at the ground level.
+                        </p>
+                        <p>
+                            Today, I apply that systematic, engineering approach to building diverse business ventures 
+                            that serve real market needs - from helping tailors and seamstresses through Sewcart, 
+                            to empowering small businesses with digital tools via Salo, to revolutionizing content creation 
+                            with AI assistance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h3><i class="fas fa-quote-left"></i> My Philosophy</h3>
+                    <p>
+                        Business success comes from understanding real problems and building systematic solutions. 
+                        Whether it's managing inventory in a retail store or developing digital platforms, 
+                        the principles remain the same: listen to your market, deliver value consistently, 
+                        and never stop innovating.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Journey Timeline -->
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-road"></i> My Entrepreneurial Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item loading">
+                        <div class="timeline-content">
+                            <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2017 - 2019</div>
+                            <h3 class="timeline-title"><i class="fas fa-store"></i> Foundation in Retail</h3>
+                            <p class="timeline-description">
+                                Started as Sales Representative at Inusa's Haberdashery, learning customer service, 
+                                product knowledge, and the fundamentals of retail operations. Consistently achieved 
+                                sales targets while building strong customer relationships.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item loading">
+                        <div class="timeline-content">
+                            <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2020 - 2021</div>
+                            <h3 class="timeline-title"><i class="fas fa-users"></i> Leadership & Operations</h3>
+                            <p class="timeline-description">
+                                Promoted to Store Manager, leading sales teams and implementing strategies that 
+                                increased store sales. Developed expertise in inventory management, team leadership, 
+                                and customer relationship building.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item loading">
+                        <div class="timeline-content">
+                            <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2022</div>
+                            <h3 class="timeline-title"><i class="fas fa-graduation-cap"></i> Academic Achievement</h3>
+                            <p class="timeline-description">
+                                Graduated with Bachelor of Engineering in Mechanical Engineering from ABU Zaria, 
+                                combining technical knowledge with practical business experience.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item loading">
+                        <div class="timeline-content">
+                            <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2023 - 2024</div>
+                            <h3 class="timeline-title"><i class="fas fa-truck"></i> Strategic Procurement</h3>
+                            <p class="timeline-description">
+                                Advanced to Sales and Procurement Officer, mastering vendor negotiations, 
+                                supply chain management, and strategic planning. Earned certifications in 
+                                entrepreneurship and warehouse management.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item loading">
+                        <div class="timeline-content">
+                            <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2024 - Present</div>
+                            <h3 class="timeline-title"><i class="fas fa-rocket"></i> Multi-Venture Entrepreneur</h3>
+                            <p class="timeline-description">
+                                Launched Sewcart retail business, developed Salo digital platform, 
+                                established Magazine.Salo, and pioneered AI-assisted publishing. 
+                                Building an ecosystem of interconnected business ventures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills & Expertise -->
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-tools"></i> Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-category loading">
+                        <div class="skill-icon"><i class="fas fa-store"></i></div>
+                        <h3>Retail & Operations</h3>
+                        <ul class="skill-list">
+                            <li>Store Management</li>
+                            <li>Inventory Control</li>
+                            <li>Sales Strategy</li>
+                            <li>Customer Service</li>
+                            <li>Team Leadership</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category loading">
+                        <div class="skill-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Business Development</h3>
+                        <ul class="skill-list">
+                            <li>Vendor Negotiations</li>
+                            <li>Strategic Planning</li>
+                            <li>Market Analysis</li>
+                            <li>Partnership Development</li>
+                            <li>Business Model Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category loading">
+                        <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Digital & Technology</h3>
+                        <ul class="skill-list">
+                            <li>Platform Development</li>
+                            <li>WordPress & WooCommerce</li>
+                            <li>Basic HTML, CSS, JavaScript</li>
+                            <li>Google Analytics</li>
+                            <li>Digital Marketing</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category loading">
+                        <div class="skill-icon"><i class="fas fa-pen-nib"></i></div>
+                        <h3>Content & Publishing</h3>
+                        <ul class="skill-list">
+                            <li>AI-Assisted Writing</li>
+                            <li>Editorial Management</li>
+                            <li>Content Strategy</li>
+                            <li>Writer Coordination</li>
+                            <li>Publishing Innovation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="content-section">
+                <h2 class="section-title"><i class="fas fa-certificate"></i> Professional Development</h2>
+                <div class="two-column">
+                    <div>
+                        <h3 style="margin-bottom: 2rem; color: #667eea;"><i class="fas fa-award"></i> Recent Certifications</h3>
+                        <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px;">
+                            <ul style="list-style: none; line-height: 2;">
+                                <li><i class="fas fa-graduation-cap"></i> <strong>Diploma in Financial Accounting</strong><br><span style="color: #666;">August 2024</span></li>
+                                <li><i class="fas fa-box-open"></i> <strong>Warehouse Management Certification</strong><br><span style="color: #666;">February 2024</span></li>
+                                <li><i class="fas fa-lightbulb"></i> <strong>Developing Innovative Ideas for New Companies</strong><br><span style="color: #666;">February 2023</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 2rem; color: #667eea;"><i class="fas fa-university"></i> Education</h3>
+                        <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px;">
+                            <h4>Bachelor of Engineering</h4>
+                            <p style="color: #667eea; margin-bottom: 1rem;">Mechanical Engineering</p>
+                            <p>Ahmadu Bello University, Zaria</p>
+                            <p style="color: #666;">Graduated: February 2022</p>
+                            <p style="margin-top: 1rem; font-style: italic; color: #666;">
+                                This technical foundation taught me systematic problem-solving 
+                                and analytical thinking that I now apply to business challenges.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy">
+            <div class="container">
+                <div class="philosophy-content">
+                    <h2><i class="fas fa-brain"></i> Business Philosophy</h2>
+                    <p class="philosophy-text">
+                        "Innovation happens at the intersection of understanding real problems and having 
+                        the courage to build solutions. Whether I'm helping a tailor find the right materials 
+                        at Sewcart, enabling a small business to go digital through Salo, or pushing 
+                        the boundaries of content creation with AI, my goal remains the same: create value 
+                        that makes a meaningful difference in people's lives and businesses."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="contact-cta">
+            <div class="container">
+                <h2><i class="fas fa-handshake"></i> Ready to Collaborate?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 1rem; color: #666;">
+                    Whether you're interested in business partnerships, investment opportunities, 
+                    or simply want to connect with a fellow entrepreneur.
+                </p>
+                <a href="contact.html" class="btn"><i class="fas fa-paper-plane"></i> Let's Connect</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: #fff; text-align: center; padding: 3rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Business Ventures</h4>
+                    <p><a href="sewcart.html" style="color: #ccc; text-decoration: none;"><i class="fas fa-store"></i> Sewcart Retail</a></p>
+                    <p><a href="salo.html" style="color: #ccc; text-decoration: none;"><i class="fas fa-globe"></i> Salo</a></p>
+                    <p><a href="magazine.html" style="color: #ccc; text-decoration: none;"><i class="fas fa-newspaper"></i> Magazine.Salo</a></p>
+                    <p><a href="publishing.html" style="color: #ccc; text-decoration: none;"><i class="fas fa-robot"></i> AI-Assisted Publishing</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Services</h4>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;"><i class="fas fa-chart-line"></i> Business Consulting</a></p>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;"><i class="fas fa-bullhorn"></i> Digital Strategy</a></p>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;"><i class="fas fa-handshake"></i> Partnership Opportunities</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Connect</h4>
+                    <p><a href="contact.html" style="color: #ccc; text-decoration: none;"><i class="fas fa-envelope"></i> Business Inquiries</a></p>
+                    <p><a href="blog.html" style="color: #ccc; text-decoration: none;"><i class="fas fa-blog"></i> Read My Blog</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kaduna, Nigeria</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                © 2025 Portfolio. Built with passion for innovation.
+            </p>
+        </div>
+    </footer>
+       <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading animation delay
+            const loadingElements = document.querySelectorAll('.loading');
+            loadingElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, index * 200);
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+
+            header.style.transition = 'transform 0.3s ease-in-out';
+
+            // Timeline animation on scroll
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                    }
+                });
+            }, observerOptions);
+
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

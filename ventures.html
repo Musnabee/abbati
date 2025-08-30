@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Ventures | Entrepreneur & Digital Business Owner</title>
+    <meta name="description" content="Explore my diverse business portfolio spanning retail, digital platforms, fashion publishing, and AI-assisted content creation.">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #667eea;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .page-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Portfolio Approach */
+        .portfolio-intro {
+            background: #f8f9fa;
+            padding: 60px 0;
+            margin-bottom: 80px;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro-content h2 {
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .approach-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .approach-icon {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .approach-item h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* Venture Cards */
+        .venture-full {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .venture-full:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .venture-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .venture-icon-large {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .venture-header h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .venture-tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .venture-content {
+            padding: 3rem 2rem;
+        }
+
+        .venture-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .venture-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .venture-highlights {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .venture-highlights h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+        }
+
+        .highlight-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .highlight-list i {
+            color: #667eea;
+            width: 16px;
+        }
+
+        .venture-cta {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Future Plans */
+        .future-plans {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .future-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .future-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .future-item h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-hero p {
+                font-size: 1.1rem;
+            }
+
+            .venture-details {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .venture-header {
+                padding: 2rem 1rem;
+            }
+
+            .venture-header h3 {
+                font-size: 2rem;
+            }
+
+            .venture-content {
+                padding: 2rem 1rem;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .future-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ventures.html" class="active">Ventures</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Business Ventures</h1>
+            <p>Building a diverse portfolio of businesses that create real value and solve meaningful problems</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Approach -->
+    <section class="portfolio-intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2>My Investment Approach</h2>
+                <p class="intro-text">
+                    Every venture I build follows a systematic approach rooted in my engineering background 
+                    and retail experience. I identify real market problems, develop sustainable solutions, 
+                    and create businesses that can grow and scale effectively.
+                </p>
+                
+                <div class="approach-grid">
+                    <div class="approach-item">
+                        <i class="fas fa-search approach-icon"></i>
+                        <h3>Market Research</h3>
+                        <p>Deep understanding of customer needs and market gaps through direct experience.</p>
+                    </div>
+                    <div class="approach-item">
+                        <i class="fas fa-cogs approach-icon"></i>
+                        <h3>Systematic Solutions</h3>
+                        <p>Engineering mindset applied to building scalable and efficient business processes.</p>
+                    </div>
+                    <div class="approach-item">
+                        <i class="fas fa-rocket approach-icon"></i>
+                        <h3>Sustainable Growth</h3>
+                        <p>Focus on long-term value creation and building businesses that can scale organically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Current Ventures -->
+            <section class="section">
+                <h2 class="section-title">Current Active Ventures</h2>
+
+                <!-- Sewcart -->
+                <div class="venture-full loading">
+                    <div class="venture-header">
+                        <i class="fas fa-cut venture-icon-large"></i>
+                        <h3>Sewcart</h3>
+                        <p class="venture-tagline">Premium Sewing Accessories & Materials Retail</p>
+                    </div>
+                    <div class="venture-content">
+                        <div class="venture-details">
+                            <div class="venture-description">
+                                <p>
+                                    Sewcart is my flagship retail business specializing in high-quality sewing accessories, 
+                                    materials, and supplies. Built on the foundation of my extensive retail experience, 
+                                    Sewcart serves tailors, fashion designers, and sewing enthusiasts across Nigeria.
+                                </p>
+                                <p>
+                                    What sets Sewcart apart is our deep understanding of the creative community's needs. 
+                                    We don't just sell products; we provide expert guidance, maintain consistent quality, 
+                                    and build relationships that help our customers succeed in their craft.
+                                </p>
+                                <p>
+                                    This venture leverages my procurement expertise to source quality materials at 
+                                    competitive prices while applying my customer service skills to create an 
+                                    exceptional shopping experience.
+                                </p>
+                            </div>
+                            <div class="venture-highlights">
+                                <h4>Key Strengths</h4>
+                                <ul class="highlight-list">
+                                    <li><i class="fas fa-check"></i> Expert product curation</li>
+                                    <li><i class="fas fa-check"></i> Competitive pricing strategy</li>
+                                    <li><i class="fas fa-check"></i> Strong supplier relationships</li>
+                                    <li><i class="fas fa-check"></i> Personalized customer service</li>
+                                    <li><i class="fas fa-check"></i> Local market expertise</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="venture-cta">
+                            <a href="sewcart.html" class="btn">View Details</a>
+                            <a href="contact.html" class="btn btn-outline">Visit Store</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SALO -->
+                <div class="venture-full loading">
+                    <div class="venture-header">
+                        <i class="fas fa-globe venture-icon-large"></i>
+                        <h3>SALO</h3>
+                        <p class="venture-tagline">Free Website Creation & Client Management Platform</p>
+                    </div>
+                    <div class="venture-content">
+                        <div class="venture-details">
+                            <div class="venture-description">
+                                <p>
+                                    SALO addresses a critical gap in the Nigerian market: affordable, professional 
+                                    web presence for small businesses. Drawing from my retail experience, I recognized 
+                                    that many business owners struggle with digital presence and client management.
+                                </p>
+                                <p>
+                                    The platform provides free website creation tools combined with integrated client 
+                                    management features. This unique combination helps small businesses not just get 
+                                    online, but actually manage and grow their customer base effectively.
+                                </p>
+                                <p>
+                                    By removing traditional barriers to entry, SALO democratizes access to 
+                                    professional digital tools that were previously only available to larger businesses.
+                                </p>
+                            </div>
+                            <div class="venture-highlights">
+                                <h4>Platform Features</h4>
+                                <ul class="highlight-list">
+                                    <li><i class="fas fa-check"></i> Free website builder</li>
+                                    <li><i class="fas fa-check"></i> Client management system</li>
+                                    <li><i class="fas fa-check"></i> Mobile-responsive designs</li>
+                                    <li><i class="fas fa-check"></i> User-friendly interface</li>
+                                    <li><i class="fas fa-check"></i> Nigerian market focus</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="venture-cta">
+                            <a href="salo.html" class="btn">Learn More</a>
+                            <a href="https://SALO" target="_blank" class="btn btn-outline">Visit Platform</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Magazine -->
+                <div class="venture-full loading">
+                    <div class="venture-header">
+                        <i class="fas fa-magazine venture-icon-large"></i>
+                        <h3>Magazine</h3>
+                        <p class="venture-tagline">Fashion Magazine & Writer Community Platform</p>
+                    </div>
+                    <div class="venture-content">
+                        <div class="venture-details">
+                            <div class="venture-description">
+                                <p>
+                                    This venture combines my passion for fashion (evident through Sewcart's connection 
+                                    to the creative industry) with digital publishing innovation. Magazine 
+                                    serves as both a fashion magazine and a platform for emerging writers.
+                                </p>
+                                <p>
+                                    The magazine features curated fashion content while providing sub-blogs for writers 
+                                    to develop their voices and build audiences. This creates a sustainable ecosystem 
+                                    where quality content drives readership, and readership creates opportunities for writers.
+                                </p>
+                                <p>
+                                    By focusing on the Nigerian fashion industry, we're building a community that 
+                                    celebrates local talent while providing international-quality content and platform features.
+                                </p>
+                            </div>
+                            <div class="venture-highlights">
+                                <h4>Unique Value</h4>
+                                <ul class="highlight-list">
+                                    <li><i class="fas fa-check"></i> Fashion-focused content</li>
+                                    <li><i class="fas fa-check"></i> Writer development platform</li>
+                                    <li><i class="fas fa-check"></i> Community building</li>
+                                    <li><i class="fas fa-check"></i> Local talent showcase</li>
+                                    <li><i class="fas fa-check"></i> Multi-author ecosystem</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="venture-cta">
+                            <a href="magazine.html" class="btn">Explore Details</a>
+                            <a href="https://Magazine" target="_blank" class="btn btn-outline">Read Magazine</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI-Assisted Publishing -->
+                <div class="venture-full loading">
+                    <div class="venture-header">
+                        <i class="fas fa-robot venture-icon-large"></i>
+                        <h3>AI-Assisted Publishing</h3>
+                        <p class="venture-tagline">Revolutionary Content Creation & Novel Publishing</p>
+                    </div>
+                    <div class="venture-content">
+                        <div class="venture-details">
+                            <div class="venture-description">
+                                <p>
+                                    This venture represents the cutting edge of my business portfolio. By leveraging 
+                                    AI assistance in novel writing and content creation, I'm pioneering new approaches 
+                                    to publishing that dramatically reduce time-to-market while maintaining creative quality.
+                                </p>
+                                <p>
+                                    The process isn't about replacing human creativity—it's about amplifying it. 
+                                    AI assistance allows for rapid ideation, consistent output, and the ability to 
+                                    explore multiple narrative directions quickly, bringing stories to readers faster than ever.
+                                </p>
+                                <p>
+                                    This positions me at the forefront of publishing innovation, creating new revenue 
+                                    streams while exploring the future of content creation in an AI-enhanced world.
+                                </p>
+                            </div>
+                            <div class="venture-highlights">
+                                <h4>Innovation Areas</h4>
+                                <ul class="highlight-list">
+                                    <li><i class="fas fa-check"></i> Rapid novel development</li>
+                                    <li><i class="fas fa-check"></i> AI-human collaboration</li>
+                                    <li><i class="fas fa-check"></i> Genre exploration</li>
+                                    <li><i class="fas fa-check"></i> Publishing efficiency</li>
+                                    <li><i class="fas fa-check"></i> Market responsiveness</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="venture-cta">
+                            <a href="publishing.html" class="btn">Discover Process</a>
+                            <a href="contact.html" class="btn btn-outline">Discuss Collaboration</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Future Plans -->
+        <section class="future-plans">
+            <div class="container">
+                <h2>Future Expansion</h2>
+                <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 1rem;">
+                    Building on proven success to explore new opportunities
+                </p>
+                
+                <div class="future-grid">
+                    <div class="future-item">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Digital Ecosystem Integration</h3>
+                        <p>
+                            Connecting all ventures through shared customer insights, cross-platform promotions, 
+                            and integrated service offerings that create more value for customers.
+                        </p>
+                    </div>
+                    
+                    <div class="future-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Strategic Partnerships</h3>
+                        <p>
+                            Exploring partnerships with complementary businesses to expand reach, 
+                            share resources, and create win-win growth opportunities across industries.
+                        </p>
+                    </div>
+                    
+                    <div class="future-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>New Market Opportunities</h3>
+                        <p>
+                            Identifying emerging needs in the Nigerian market and developing innovative 
+                            solutions that leverage my multi-industry experience and proven execution ability.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <a href="contact.html" class="btn" style="background: white; color: #667eea;">Partner With Me</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: #fff; text-align: center; padding: 3rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Business Ventures</h4>
+                    <p><a href="sewcart.html" style="color: #ccc; text-decoration: none;">Sewcart Retail</a></p>
+                    <p><a href="salo.html" style="color: #ccc; text-decoration: none;">SALO</a></p>
+                    <p><a href="magazine.html" style="color: #ccc; text-decoration: none;">Magazine</a></p>
+                    <p><a href="publishing.html" style="color: #ccc; text-decoration: none;">AI-Assisted Publishing</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Services</h4>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;">Business Consulting</a></p>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;">Digital Strategy</a></p>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;">Partnership Opportunities</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Connect</h4>
+                    <p><a href="contact.html" style="color: #ccc; text-decoration: none;">Business Inquiries</a></p>
+                    <p><a href="blog.html" style="color: #ccc; text-decoration: none;">Read My Blog</a></p>
+                    <p>Ibadan, Nigeria</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                © 2025 Portfolio. Built with passion for innovation.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading animation delay
+            const loadingElements = document.querySelectorAll('.loading');
+            loadingElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, index * 300);
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+
+            header.style.transition = 'transform 0.3s ease-in-out';
+
+            // Venture cards animation on scroll
+            const ventureCards = document.querySelectorAll('.venture-full');
+            
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                    }
+                });
+            }, observerOptions);
+
+            ventureCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
