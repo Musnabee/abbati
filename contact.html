@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Partnerships | Let's Build Something Great Together</title>
+    <meta name="description" content="Get in touch for business partnerships, consulting services, investment opportunities, or collaboration on innovative projects.">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #667eea;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="10" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="80" r="8" fill="rgba(255,255,255,0.05)"/><circle cx="60" cy="30" r="6" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: 150px 150px;
+            animation: bubble-float 20s linear infinite;
+        }
+
+        @keyframes bubble-float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .project-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            display: block;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        /* Contact Methods */
+        .contact-methods {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .method-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .method-icon {
+            font-size: 3rem;
+            color: #27ae60;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .method-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .method-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        /* Contact Form */
+        .contact-form-section {
+            padding: 80px 0;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .form-intro h3 {
+            color: #27ae60;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .form-intro p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #27ae60;
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+        }
+
+        .form-control.textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .inquiry-type {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .inquiry-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .inquiry-option:hover {
+            background: #27ae6020;
+        }
+
+        .inquiry-option input[type="radio"] {
+            margin: 0;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(39, 174, 96, 0.3);
+        }
+
+        /* Partnership Types */
+        .partnership-types {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .partnership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .partnership-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #27ae60;
+            transition: transform 0.3s ease;
+        }
+
+        .partnership-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .partnership-icon {
+            font-size: 2.5rem;
+            color: #27ae60;
+            margin-bottom: 1.5rem;
+        }
+
+        .partnership-card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+            font-size: 1.4rem;
+        }
+
+        .partnership-card p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .partnership-features {
+            list-style: none;
+        }
+
+        .partnership-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .partnership-features i {
+            color: #27ae60;
+            width: 16px;
+        }
+
+        /* Business Information */
+        .business-info {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .info-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .proof-item {
+            padding: 2rem;
+        }
+
+        .proof-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #27ae60;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .proof-label {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #27ae60;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #27ae60;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .methods-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partnership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .inquiry-type {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ventures.html">Ventures</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-content">
+                <i class="fas fa-handshake project-icon"></i>
+                <h1>Let's Connect</h1>
+                <p class="hero-subtitle">
+                    Ready to explore partnerships, collaborations, or consulting opportunities?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem; color: #333;">How to Reach Me</h2>
+            <div class="methods-grid">
+                <div class="method-card loading">
+                    <i class="fas fa-envelope method-icon"></i>
+                    <h3>Email</h3>
+                    <p>
+                        For detailed business inquiries, partnership proposals, 
+                        or comprehensive project discussions.
+                    </p>
+                    <div class="contact-info">contact@salo.com.ng</div>
+                </div>
+
+                <div class="method-card loading">
+                    <i class="fab fa-whatsapp method-icon"></i>
+                    <h3>WhatsApp</h3>
+                    <p>
+                        Quick questions, immediate consultations, 
+                        or urgent business matters.
+                    </p>
+                    <div class="contact-info">+234 xxx xxx xxxx</div>
+                </div>
+
+                <div class="method-card loading">
+                    <i class="fab fa-linkedin method-icon"></i>
+                    <h3>LinkedIn</h3>
+                    <p>
+                        Professional networking, industry discussions, 
+                        and business development conversations.
+                    </p>
+                    <div class="contact-info">linkedin.com/in/yourprofile</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <!--<section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-intro">
+                    <h3>Send Me a Message</h3>
+                    <p>
+                        Whether you're interested in partnerships, consulting services, or have 
+                        questions about my ventures, I'd love to hear from you.
+                    </p>
+                </div>
+
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company" name="company" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type of Inquiry *</label>
+                        <div class="inquiry-type">
+                            <label class="inquiry-option">
+                                <input type="radio" name="inquiryType" value="partnership" required>
+                                <i class="fas fa-handshake"></i>
+                                Business Partnership
+                            </label>
+                            <label class="inquiry-option">
+                                <input type="radio" name="inquiryType" value="consulting" required>
+                                <i class="fas fa-chart-line"></i>
+                                Consulting Services
+                            </label>
+                            <label class="inquiry-option">
+                                <input type="radio" name="inquiryType" value="investment" required>
+                                <i class="fas fa-seedling"></i>
+                                Investment Opportunity
+                            </label>
+                            <label class="inquiry-option">
+                                <input type="radio" name="inquiryType" value="speaking" required>
+                                <i class="fas fa-microphone"></i>
+                                Speaking Engagement
+                            </label>
+                            <label class="inquiry-option">
+                                <input type="radio" name="inquiryType" value="other" required>
+                                <i class="fas fa-question"></i>
+                                Other
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" class="form-control textarea" 
+                            placeholder="Please provide details about your inquiry, project scope, timeline, or any specific questions you have..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Partnership Opportunities -->
+    <section class="partnership-types">
+        <div class="container">
+            <h2 class="section-title">Partnership Opportunities</h2>
+            <div class="partnership-grid">
+                <div class="partnership-card loading">
+                    <i class="fas fa-rocket partnership-icon"></i>
+                    <h3>Strategic Partnerships</h3>
+                    <p>
+                        Collaborate on joint ventures that leverage our combined expertise, 
+                        networks, and resources to create new market opportunities.
+                    </p>
+                    <ul class="partnership-features">
+                        <li><i class="fas fa-check"></i> Joint venture development</li>
+                        <li><i class="fas fa-check"></i> Shared resource optimization</li>
+                        <li><i class="fas fa-check"></i> Market expansion strategies</li>
+                        <li><i class="fas fa-check"></i> Cross-platform integration</li>
+                    </ul>
+                </div>
+
+                <div class="partnership-card loading">
+                    <i class="fas fa-seedling partnership-icon"></i>
+                    <h3>Investment Partnerships</h3>
+                    <p>
+                        Seeking strategic investors for expansion of existing ventures 
+                        or development of new business opportunities in identified market gaps.
+                    </p>
+                    <ul class="partnership-features">
+                        <li><i class="fas fa-check"></i> Venture scaling opportunities</li>
+                        <li><i class="fas fa-check"></i> New market development</li>
+                        <li><i class="fas fa-check"></i> Technology platform expansion</li>
+                        <li><i class="fas fa-check"></i> Strategic guidance exchange</li>
+                    </ul>
+                </div>
+
+                <div class="partnership-card loading">
+                    <i class="fas fa-users partnership-icon"></i>
+                    <h3>Collaboration Projects</h3>
+                    <p>
+                        Work together on specific projects that combine our expertise 
+                        for mutual benefit and market impact.
+                    </p>
+                    <ul class="partnership-features">
+                        <li><i class="fas fa-check"></i> Content creation partnerships</li>
+                        <li><i class="fas fa-check"></i> Platform development projects</li>
+                        <li><i class="fas fa-check"></i> Market research initiatives</li>
+                        <li><i class="fas fa-check"></i> Educational program development</li>
+                    </ul>
+                </div>
+
+                <div class="partnership-card loading">
+                    <i class="fas fa-graduation-cap partnership-icon"></i>
+                    <h3>Educational Partnerships</h3>
+                    <p>
+                        Collaborate with educational institutions, training organizations, 
+                        or industry bodies to develop entrepreneurship and business programs.
+                    </p>
+                    <ul class="partnership-features">
+                        <li><i class="fas fa-check"></i> Curriculum development</li>
+                        <li><i class="fas fa-check"></i> Workshop facilitation</li>
+                        <li><i class="fas fa-check"></i> Mentorship programs</li>
+                        <li><i class="fas fa-check"></i> Industry case studies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Information -->
+    <section class="business-info">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Business Information</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Based in Kaduna, Nigeria</p>
+                    <p>Serving clients across West Africa</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: 10:00 AM - 4:00 PM</p>
+                    <p>Sunday: By appointment</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Languages</h3>
+                    <p>English (Business)</p>
+                    <p>Hausa (Northern Nigeria)</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>Response Time</h3>
+                    <p>Email: Within 24 hours</p>
+                    <p>WhatsApp: Same day</p>
+                    <p>Meetings: Within 48 hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">Why Partner With Me?</h2>
+            <div class="proof-grid">
+                <div class="proof-item">
+                    <span class="proof-number">4</span>
+                    <span class="proof-label">Active Business Ventures</span>
+                </div>
+                
+                <div class="proof-item">
+                    <span class="proof-number">7+</span>
+                    <span class="proof-label">Years Business Experience</span>
+                </div>
+                
+                <div class="proof-item">
+                    <span class="proof-number">1000+</span>
+                    <span class="proof-label">Platform Users Served</span>
+                </div>
+                
+                <div class="proof-item">
+                    <span class="proof-number">100%</span>
+                    <span class="proof-label">Commitment to Excellence</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Something Great?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                Whether it's a new partnership, consulting project, or innovative collaboration, 
+                let's explore how we can create value together.
+            </p>
+            <a href="https://wa.me/2349012450048" class="btn btn-primary">
+                <i class="fas fa-envelope" style="margin-right: 0.5rem;"></i>
+                Send Message
+            </a>
+          <!--  <a href="https://calendly.com/yourname" target="_blank" class="btn btn-outline">
+                <i class="fas fa-calendar" style="margin-right: 0.5rem;"></i>
+                Schedule Call
+            </a>-->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: #fff; text-align: center; padding: 3rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Business Ventures</h4>
+                    <p><a href="sewcart.html" style="color: #ccc; text-decoration: none;">Sewcart Retail</a></p>
+                    <p><a href="salo.html" style="color: #ccc; text-decoration: none;">SALO</a></p>
+                    <p><a href="magazine.html" style="color: #ccc; text-decoration: none;">Magazine</a></p>
+                    <p><a href="publishing.html" style="color: #ccc; text-decoration: none;">AI-Assisted Publishing</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Services</h4>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;">Business Consulting</a></p>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;">Digital Strategy</a></p>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;">Partnership Opportunities</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Connect</h4>
+                    <p><a href="contact.html" style="color: #ccc; text-decoration: none;">Business Inquiries</a></p>
+                   <!-- <p><a href="blog.html" style="color: #ccc; text-decoration: none;">Read My Blog</a></p>-->
+                    <p>Kaduna, Nigeria</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                © 2025 Portfolio. Built with passion for innovation.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading animation delay
+            const loadingElements = document.querySelectorAll('.loading');
+            loadingElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, index * 200);
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+
+            header.style.transition = 'transform 0.3s ease-in-out';
+
+            // Form interactions
+            const formControls = document.querySelectorAll('.form-control');
+            formControls.forEach(control => {
+                control.addEventListener('focus', function() {
+                    this.style.borderColor = '#27ae60';
+                    this.style.boxShadow = '0 0 0 3px rgba(39, 174, 96, 0.1)';
+                });
+                
+                control.addEventListener('blur', function() {
+                    this.style.borderColor = '#e9ecef';
+                    this.style.boxShadow = 'none';
+                });
+            });
+
+            // Inquiry type selection
+            const inquiryOptions = document.querySelectorAll('.inquiry-option');
+            inquiryOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const radio = this.querySelector('input[type="radio"]');
+                    radio.checked = true;
+                    
+                    // Update visual selection
+                    inquiryOptions.forEach(opt => {
+                        opt.style.background = '#f8f9fa';
+                        opt.style.border = 'none';
+                    });
+                    
+                    this.style.background = '#27ae6020';
+                    this.style.border = '2px solid #27ae60';
+                });
+            });
+
+            // Form submission
+            const contactForm = document.querySelector('.contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show success message
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalText = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="fas fa-check" style="margin-right: 0.5rem;"></i>Message Sent!';
+                submitBtn.style.background = '#27ae60';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+                    this.reset();
+                }, 3000);
+            });
+
+            // Smooth scroll to form
+            const formLinks = document.querySelectorAll('a[href="#contact-form"]');
+            formLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const form = document.querySelector('.contact-form-section');
+                    form.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

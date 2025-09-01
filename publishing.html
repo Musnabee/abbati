@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Assisted Publishing | Revolutionary Content Creation</title>
+    <meta name="description" content="Pioneering the future of publishing through AI-assisted novel writing and content creation, revolutionizing speed-to-market while maintaining creative quality.">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Project Hero */
+        .project-hero {
+            background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="10" y="30" font-size="20" fill="rgba(255,255,255,0.03)">AI</text><text x="60" y="70" font-size="15" fill="rgba(255,255,255,0.03)">📚</text><text x="30" y="80" font-size="12" fill="rgba(255,255,255,0.03)">✍️</text></svg>');
+            background-size: 200px 200px;
+            animation: text-float 25s linear infinite;
+        }
+
+        @keyframes text-float {
+            0% { transform: translateX(0) translateY(0) rotate(0deg); }
+            50% { transform: translateX(-20px) translateY(-30px) rotate(5deg); }
+            100% { transform: translateX(0) translateY(0) rotate(0deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            display: block;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        /* Innovation Approach */
+        .innovation-approach {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .approach-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #8e44ad;
+        }
+
+        .approach-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .approach-visual {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .visual-element {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .process-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 1rem 0;
+        }
+
+        .flow-step {
+            background: #8e44ad;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            flex: 1;
+            text-align: center;
+            margin: 0 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .flow-arrow {
+            color: #8e44ad;
+            font-size: 1.5rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Process Details */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .process-icon {
+            font-size: 3rem;
+            color: #8e44ad;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .process-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .process-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Published Works */
+        .published-works {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .book-cover {
+            height: 250px;
+            background: linear-gradient(45deg, #8e44ad, #9b59b6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .book-cover::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        .book-info {
+            padding: 2rem;
+        }
+
+        .book-genre {
+            color: #8e44ad;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .book-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .book-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Market Opportunity */
+        .market-opportunity {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .opportunity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .opportunity-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .opportunity-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Competitive Advantages */
+        .advantages {
+            padding: 80px 0;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .advantage-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-left: 4px solid #8e44ad;
+        }
+
+        .advantage-icon {
+            font-size: 2.5rem;
+            color: #8e44ad;
+            margin-bottom: 1.5rem;
+        }
+
+        .advantage-card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .advantage-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #8e44ad;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #8e44ad;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .opportunity-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-flow {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="ventures.html">Ventures</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <i class="fas fa-robot project-icon"></i>
+                <h1>AI-Assisted Publishing</h1>
+                <p class="hero-subtitle">
+                    Revolutionizing Content Creation Through Human-AI Collaboration
+                </p>
+                <p class="hero-description">
+                    Pioneering the future of publishing by combining artificial intelligence with human 
+                    creativity to produce high-quality novels and content at unprecedented speed, 
+                    while maintaining the authenticity and emotional depth readers expect.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Approach -->
+    <section class="innovation-approach">
+        <div class="container">
+            <div class="approach-grid">
+                <div class="approach-content">
+                    <h3>The Innovation Behind the Process</h3>
+                    <p>
+                        AI-assisted publishing isn't about replacing human creativity—it's about amplifying it. 
+                        By leveraging artificial intelligence as a collaborative partner, I can explore 
+                        narrative possibilities faster, overcome writer's block, and bring story ideas 
+                        to market in record time.
+                    </p>
+                    <p>
+                        This approach allows for rapid iteration, consistent output, and the ability to 
+                        test multiple storylines and genres simultaneously. The result is higher productivity 
+                        without sacrificing the human elements that make stories compelling.
+                    </p>
+                    <p>
+                        As someone who approaches business systematically, I've applied the same methodical 
+                        thinking to optimize the creative process while preserving the magic of storytelling.
+                    </p>
+                </div>
+                <div class="approach-visual">
+                    <div class="visual-element">Human Creativity + AI Assistance = Accelerated Publishing</div>
+                    <div class="process-flow">
+                        <div class="flow-step">Idea</div>
+                        <i class="fas fa-arrow-right flow-arrow"></i>
+                        <div class="flow-step">AI Collaboration</div>
+                        <i class="fas fa-arrow-right flow-arrow"></i>
+                        <div class="flow-step">Refinement</div>
+                        <i class="fas fa-arrow-right flow-arrow"></i>
+                        <div class="flow-step">Publication</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- The Process -->
+            <section class="section">
+                <h2 class="section-title">The AI-Assisted Writing Process</h2>
+                <div class="process-grid">
+                    <div class="process-card loading">
+                        <i class="fas fa-lightbulb process-icon"></i>
+                        <h3>Concept Development</h3>
+                        <p>
+                            Starting with core story ideas, character concepts, and thematic elements. 
+                            AI helps explore different narrative directions and plot possibilities 
+                            while I maintain creative control over the story's heart and message.
+                        </p>
+                    </div>
+
+                    <div class="process-card loading">
+                        <i class="fas fa-comments process-icon"></i>
+                        <h3>Collaborative Writing</h3>
+                        <p>
+                            Interactive writing sessions where AI suggests dialogue, descriptions, 
+                            and narrative developments while I guide the story's direction, 
+                            character development, and emotional authenticity.
+                        </p>
+                    </div>
+
+                    <div class="process-card loading">
+                        <i class="fas fa-edit process-icon"></i>
+                        <h3>Human Refinement</h3>
+                        <p>
+                            Extensive editing and refinement process where I ensure voice consistency, 
+                            emotional depth, and narrative coherence. AI accelerates the first draft; 
+                            human insight creates the final masterpiece.
+                        </p>
+                    </div>
+
+                    <div class="process-card loading">
+                        <i class="fas fa-rocket process-icon"></i>
+                        <h3>Rapid Publication</h3>
+                        <p>
+                            Streamlined publishing workflow that gets completed novels to market 
+                            in weeks rather than months, allowing for responsive content creation 
+                            and market testing of different genres and styles.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Published Works -->
+            <section class="section published-works">
+                <div class="container">
+                    <h2 class="section-title">Published Works</h2>
+                    <div class="works-grid">
+                        <div class="book-card loading">
+                            <div class="book-cover">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="book-info">
+                                <div class="book-genre">Romance</div>
+                                <h3 class="book-title">Digital Hearts</h3>
+                                <p class="book-description">
+                                    A contemporary romance exploring love in the age of technology, 
+                                    following two entrepreneurs whose business partnership evolves 
+                                    into something deeper.
+                                </p>
+                                <div class="book-meta">
+                                    <span>2024</span>
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="book-card loading">
+                            <div class="book-cover">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="book-info">
+                                <div class="book-genre">Historical Fiction</div>
+                                <h3 class="book-title">The Lagos Chronicles</h3>
+                                <p class="book-description">
+                                    A sweeping historical novel tracing three generations of a Nigerian 
+                                    family through colonial times to modern independence, 
+                                    celebrating resilience and tradition.
+                                </p>
+                                <div class="book-meta">
+                                    <span>2024</span>
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="book-card loading">
+                            <div class="book-cover">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="book-info">
+                                <div class="book-genre">Sci-Fi Thriller</div>
+                                <h3 class="book-title">Neural Networks</h3>
+                                <p class="book-description">
+                                    A futuristic thriller exploring the boundaries between human 
+                                    consciousness and artificial intelligence in a world where 
+                                    the lines have become dangerously blurred.
+                                </p>
+                                <div class="book-meta">
+                                    <span>2025</span>
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Competitive Advantages -->
+            <section class="section advantages">
+                <h2 class="section-title">Competitive Advantages</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card loading">
+                        <i class="fas fa-clock advantage-icon"></i>
+                        <h3>Speed to Market</h3>
+                        <p>
+                            Complete novels in weeks instead of months, allowing rapid response to 
+                            market trends and reader preferences while maintaining quality standards.
+                        </p>
+                    </div>
+
+                    <div class="advantage-card loading">
+                        <i class="fas fa-brain advantage-icon"></i>
+                        <h3>Creative Amplification</h3>
+                        <p>
+                            AI assistance enables exploration of multiple narrative paths, character 
+                            developments, and plot variations that would take months to develop manually.
+                        </p>
+                    </div>
+
+                    <div class="advantage-card loading">
+                        <i class="fas fa-sync advantage-icon"></i>
+                        <h3>Consistent Output</h3>
+                        <p>
+                            Reliable publishing schedule with consistent quality, allowing for 
+                            series development and reader engagement through regular releases.
+                        </p>
+                    </div>
+
+                    <div class="advantage-card loading">
+                        <i class="fas fa-chart-bar advantage-icon"></i>
+                        <h3>Market Responsiveness</h3>
+                        <p>
+                            Ability to quickly adapt to reader feedback, market trends, and 
+                            emerging genres, creating content that resonates with current audiences.
+                        </p>
+                    </div>
+
+                    <div class="advantage-card loading">
+                        <i class="fas fa-palette advantage-icon"></i>
+                        <h3>Genre Flexibility</h3>
+                        <p>
+                            Explore multiple genres and writing styles efficiently, building 
+                            diverse readership and identifying the most profitable market segments.
+                        </p>
+                    </div>
+
+                    <div class="advantage-card loading">
+                        <i class="fas fa-dollar-sign advantage-icon"></i>
+                        <h3>Cost Efficiency</h3>
+                        <p>
+                            Lower production costs per title enable competitive pricing and 
+                            higher profit margins while maintaining quality standards.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Market Opportunity -->
+        <section class="market-opportunity">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Market Opportunity & Future</h2>
+                <div class="opportunity-grid">
+                    <div class="opportunity-item">
+                        <i class="fas fa-globe-africa"></i>
+                        <h3>African Literature Market</h3>
+                        <p>
+                            Growing global interest in African narratives creates unprecedented 
+                            opportunities for Nigerian authors to reach international audiences.
+                        </p>
+                    </div>
+                    
+                    <div class="opportunity-item">
+                        <i class="fas fa-mobile"></i>
+                        <h3>Digital Reading Growth</h3>
+                        <p>
+                            Increasing smartphone penetration and digital literacy in Nigeria 
+                            expands the potential readership for digital-first publishing.
+                        </p>
+                    </div>
+                    
+                    <div class="opportunity-item">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Technology Advancement</h3>
+                        <p>
+                            Rapidly improving AI capabilities create new possibilities for 
+                            human-AI collaboration in creative industries.
+                        </p>
+                    </div>
+                    
+                    <div class="opportunity-item">
+                        <i class="fas fa-users"></i>
+                        <h3>Creator Economy</h3>
+                        <p>
+                            The global creator economy provides multiple revenue streams beyond 
+                            traditional book sales, from serialized content to multimedia adaptations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Interested in AI-Assisted Publishing?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                    Whether you're curious about the process, interested in collaboration, 
+                    or want to explore this innovative approach to content creation
+                </p>
+                <a href="contact.html" class="btn btn-primary">
+                    <i class="fas fa-comments" style="margin-right: 0.5rem;"></i>
+                    Discuss Collaboration
+                </a>
+                <a href="blog.html" class="btn btn-outline">
+                    <i class="fas fa-blog" style="margin-right: 0.5rem;"></i>
+                    Read About Process
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: #fff; text-align: center; padding: 3rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Business Ventures</h4>
+                    <p><a href="sewcart.html" style="color: #ccc; text-decoration: none;">Sewcart Retail</a></p>
+                    <p><a href="salo.html" style="color: #ccc; text-decoration: none;">Salo.com.ng</a></p>
+                    <p><a href="magazine.html" style="color: #ccc; text-decoration: none;">Magazine.salo.com.ng</a></p>
+                    <p><a href="publishing.html" style="color: #ccc; text-decoration: none;">AI-Assisted Publishing</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Services</h4>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;">Business Consulting</a></p>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;">Digital Strategy</a></p>
+                    <p><a href="services.html" style="color: #ccc; text-decoration: none;">Partnership Opportunities</a></p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1rem; color: #667eea;">Connect</h4>
+                    <p><a href="contact.html" style="color: #ccc; text-decoration: none;">Business Inquiries</a></p>
+                    <p><a href="blog.html" style="color: #ccc; text-decoration: none;">Read My Blog</a></p>
+                    <p>Ibadan, Nigeria</p>
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="background: #667eea; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none;"><i class="fas fa-envelope"></i></a>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                © 2025 Portfolio. Built with passion for innovation.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading animation delay
+            const loadingElements = document.querySelectorAll('.loading');
+            loadingElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, index * 200);
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+
+            header.style.transition = 'transform 0.3s ease-in-out';
+
+            // Book card hover effects
+            const bookCards = document.querySelectorAll('.book-card');
+            bookCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const cover = this.querySelector('.book-cover');
+                    cover.style.transform = 'scale(1.05)';
+                    cover.style.transition = 'transform 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const cover = this.querySelector('.book-cover');
+                    cover.style.transform = 'scale(1)';
+                });
+            });
+
+            // Process flow animation
+            const processCards = document.querySelectorAll('.process-card');
+            
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                    }
+                });
+            }, observerOptions);
+
+            processCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine.salo.com.ng | Nigerian Fashion Magazine & Writer Platform</title>
+    <meta name="description" content="Magazine.salo.com.ng - A dynamic fashion magazine platform celebrating Nigerian style while empowering emerging writers and content creators.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Font Awesome CDN -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"  crossorigin="anonymous"  referrerpolicy="no-referrer">
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Project Hero */
+        .project-hero {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="20,10 40,30 60,10 80,30 100,10 100,90 80,70 60,90 40,70 20,90 0,70 0,10" fill="rgba(255,255,255,0.03)"/></svg>');
+            background-size: 200px 200px;
+            animation: pattern-move 30s linear infinite;
+        }
+
+        @keyframes pattern-move {
+            0% { transform: translateX(0) translateY(0); }
+            50% { transform: translateX(-50px) translateY(-25px); }
+            100% { transform: translateX(0) translateY(0); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            display: block;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Editorial Vision */
+        .editorial-vision {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .vision-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #ff6b9d;
+        }
+
+        .vision-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .vision-highlights {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #fff5f8;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b9d;
+        }
+
+        .highlight-icon {
+            color: #ff6b9d;
+            font-size: 1.5rem;
+            width: 30px;
+        }
+
+        /* Platform Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #ff6b9d;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Writer Community */
+        .writer-community {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .community-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .community-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Content Showcase */
+        .content-showcase {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .showcase-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .showcase-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .showcase-image {
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .showcase-content {
+            padding: 2rem;
+        }
+
+        .showcase-category {
+            color: #ff6b9d;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .showcase-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .showcase-excerpt {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Business Model */
+        .business-model {
+            padding: 80px 0;
+        }
+
+        .model-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .model-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .revenue-streams {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .revenue-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .revenue-item:hover {
+            border-color: #ff6b9d;
+        }
+
+        .revenue-icon {
+            font-size: 2.5rem;
+            color: #ff6b9d;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #ff6b9d;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #ff6b9d;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .community-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .revenue-streams {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .project-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo"><i class="fas fa-briefcase"></i> Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html" class="active"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="ventures.html"><i class="fas fa-building"></i> Ventures</a></li>
+                <li><a href="services.html"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <i class="fas fa-magazine project-icon"></i>
+                <h1>Salo Magazine</h1>
+                <p class="hero-subtitle">
+                    Nigerian Fashion Magazine & Writer Community Platform
+                </p>
+                <p class="hero-description">
+                    A dynamic digital magazine celebrating Nigerian fashion excellence while providing 
+                    emerging writers with a platform to develop their voices and build their audiences 
+                    in the fashion and lifestyle space.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Vision -->
+    <section class="editorial-vision">
+        <div class="container">
+            <div class="vision-grid">
+                <div class="vision-content">
+                    <h3>Editorial Vision</h3>
+                    <p>
+                        Salo Magazine was born from recognizing the incredible talent in Nigeria's 
+                        fashion industry that deserved a dedicated platform. Through my experience with 
+                        Sewcart, I witnessed firsthand the creativity and innovation happening at every level.
+                    </p>
+                    <p>
+                        Our magazine celebrates this excellence while providing practical insights, trend 
+                        analysis, and industry coverage that helps fashion professionals grow their businesses 
+                        and creatives refine their craft.
+                    </p>
+                    <p>
+                        Beyond being a magazine, we're building a community where writers can develop their 
+                        skills, fashion professionals can share insights, and readers can discover the best 
+                        of Nigerian fashion innovation.
+                    </p>
+                </div>
+                <div class="vision-highlights">
+                    <h4 style="color: #ff6b9d; margin-bottom: 2rem; font-size: 1.5rem;">Our Mission</h4>
+                    <div class="highlight-item">
+                        <i class="fas fa-star highlight-icon"></i>
+                        <div>
+                            <strong>Celebrate Nigerian Fashion</strong><br>
+                            Showcase the creativity and innovation of local designers and artisans
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <i class="fas fa-pen-nib highlight-icon"></i>
+                        <div>
+                            <strong>Develop Writing Talent</strong><br>
+                            Provide emerging writers with platform and audience to grow their skills
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <i class="fas fa-users highlight-icon"></i>
+                        <div>
+                            <strong>Build Community</strong><br>
+                            Connect fashion professionals, writers, and enthusiasts in meaningful ways
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Platform Features -->
+            <section class="section">
+                <h2 class="section-title">Platform Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card loading">
+                        <i class="fas fa-newspaper feature-icon"></i>
+                        <h3>Main Magazine</h3>
+                        <p>
+                            Curated fashion content featuring designer spotlights, trend analysis, 
+                            style guides, and industry insights that keep readers informed and inspired.
+                        </p>
+                    </div>
+
+                    <div class="feature-card loading">
+                        <i class="fas fa-blog feature-icon"></i>
+                        <h3>Writer Sub-Blogs</h3>
+                        <p>
+                            Individual blog spaces for emerging writers to develop their unique voices, 
+                            build personal audiences, and contribute to the broader fashion conversation.
+                        </p>
+                    </div>
+
+                    <div class="feature-card loading">
+                        <i class="fas fa-mobile-alt feature-icon"></i>
+                        <h3>Mobile-Optimized</h3>
+                        <p>
+                            Responsive design ensuring excellent reading experience across all devices, 
+                            optimized for the way modern audiences consume content.
+                        </p>
+                    </div>
+
+                    <div class="feature-card loading">
+                        <i class="fas fa-share-alt feature-icon"></i>
+                        <h3>Social Integration</h3>
+                        <p>
+                            Seamless sharing capabilities and social media integration to amplify 
+                            content reach and build community engagement across platforms.
+                        </p>
+                    </div>
+
+                    <div class="feature-card loading">
+                        <i class="fas fa-search feature-icon"></i>
+                        <h3>Content Discovery</h3>
+                        <p>
+                            Advanced categorization and search features helping readers find exactly 
+                            what they're looking for, from specific designers to style inspiration.
+                        </p>
+                    </div>
+
+                    <div class="feature-card loading">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h3>Analytics & Growth</h3>
+                        <p>
+                            Comprehensive analytics for writers to track their audience growth, 
+                            engagement metrics, and content performance.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Categories -->
+            <section class="section">
+                <h2 class="section-title">Content Focus Areas</h2>
+                <div class="features-grid">
+                    <div class="feature-card loading">
+                        <i class="fas fa-palette feature-icon"></i>
+                        <h3>Designer Spotlights</h3>
+                        <p>
+                            In-depth profiles of Nigerian fashion designers, from emerging talents 
+                            to established brands, showcasing their journeys and creative processes.
+                        </p>
+                    </div>
+
+                    <div class="feature-card loading">
+                        <i class="fas fa-trending-up feature-icon"></i>
+                        <h3>Trend Analysis</h3>
+                        <p>
+                            Expert analysis of fashion trends, both global influences and distinctly 
+                            Nigerian innovations, helping readers stay ahead of style evolution.
+                        </p>
+                    </div>
+
+                    <div class="feature-card loading">
+                        <i class="fas fa-graduation-cap feature-icon"></i>
+                        <h3>Industry Education</h3>
+                        <p>
+                            Business insights, technique tutorials, and industry knowledge sharing 
+                            to help fashion professionals grow their skills and businesses.
+                        </p>
+                    </div>
+
+                    <div class="feature-card loading">
+                        <i class="fas fa-camera feature-icon"></i>
+                        <h3>Style Photography</h3>
+                        <p>
+                            High-quality fashion photography showcasing Nigerian style, street fashion, 
+                            and professional photoshoots that capture the vibrancy of local fashion.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Writer Community -->
+        <section class="writer-community">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Supporting Emerging Writers</h2>
+                <div class="community-grid">
+                    <div class="community-item">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Writer Development</h3>
+                        <p>
+                            Mentorship and guidance for new writers, helping them develop their 
+                            unique voice and understand fashion journalism best practices.
+                        </p>
+                    </div>
+                    
+                    <div class="community-item">
+                        <i class="fas fa-megaphone"></i>
+                        <h3>Audience Building</h3>
+                        <p>
+                            Individual sub-blogs allow writers to build personal followings while 
+                            benefiting from the magazine's established readership and SEO strength.
+                        </p>
+                    </div>
+                    
+                    <div class="community-item">
+                        <i class="fas fa-trophy"></i>
+                        <h3>Recognition Platform</h3>
+                        <p>
+                            Outstanding writers get featured in main magazine content, building 
+                            their professional portfolio and industry recognition.
+                        </p>
+                    </div>
+                    
+                    <div class="community-item">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Industry Connections</h3>
+                        <p>
+                            Access to fashion industry professionals, designers, and other writers 
+                            creating opportunities for collaboration and career growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Showcase -->
+        <section class="content-showcase">
+            <div class="container">
+                <h2 class="section-title">Featured Content</h2>
+                <div class="showcase-grid">
+                    <article class="showcase-card loading">
+                        <div class="showcase-image">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div class="showcase-content">
+                            <div class="showcase-category">Designer Spotlight</div>
+                            <h3 class="showcase-title">Rising Stars: Next Generation Nigerian Designers</h3>
+                            <p class="showcase-excerpt">
+                                Exploring the innovative approaches of young designers who are reshaping 
+                                the Nigerian fashion landscape with fresh perspectives...
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="showcase-card loading">
+                        <div class="showcase-image">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="showcase-content">
+                            <div class="showcase-category">Trend Report</div>
+                            <h3 class="showcase-title">Ankara Evolution: Traditional Meets Contemporary</h3>
+                            <p class="showcase-excerpt">
+                                How contemporary designers are reimagining traditional Ankara prints 
+                                for modern fashion while preserving cultural significance...
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="showcase-card loading">
+                        <div class="showcase-image">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="showcase-content">
+                            <div class="showcase-category">Business Insight</div>
+                            <h3 class="showcase-title">Building a Sustainable Fashion Business</h3>
+                            <p class="showcase-excerpt">
+                                Practical advice for fashion entrepreneurs on scaling operations, 
+                                managing cash flow, and building lasting customer relationships...
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Model -->
+        <section class="section business-model">
+            <div class="container">
+                <h2 class="section-title">Sustainable Publishing Model</h2>
+                <div class="model-content">
+                    <p class="model-text">
+                        Salo Magazine operates on a sustainable model that benefits all stakeholders. 
+                        By combining high-quality editorial content with writer development opportunities, 
+                        we create value that attracts readers, engages the fashion community, and provides 
+                        multiple revenue streams.
+                    </p>
+                </div>
+                
+                <div class="revenue-streams">
+                    <div class="revenue-item">
+                        <i class="fas fa-ad revenue-icon"></i>
+                        <h3>Brand Partnerships</h3>
+                        <p>Collaborations with fashion brands and businesses for sponsored content and advertising</p>
+                    </div>
+                    
+                    <div class="revenue-item">
+                        <i class="fas fa-calendar revenue-icon"></i>
+                        <h3>Event Coverage</h3>
+                        <p>Fashion show coverage, industry event reporting, and exclusive interviews</p>
+                    </div>
+                    
+                    <div class="revenue-item">
+                        <i class="fas fa-book revenue-icon"></i>
+                        <h3>Premium Content</h3>
+                        <p>Exclusive guides, industry reports, and premium subscription content for professionals</p>
+                    </div>
+                    
+                    <div class="revenue-item">
+                        <i class="fas fa-handshake revenue-icon"></i>
+                        <h3>Consulting Services</h3>
+                        <p>Fashion business consulting and brand development services for industry professionals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Connections -->
+        <section class="section" style="background: #f8f9fa; padding: 80px 0;">
+            <div class="container">
+                <h2 class="section-title">Strategic Business Synergies</h2>
+                <div class="vision-grid">
+                    <div class="vision-content">
+                        <h3>Ecosystem Integration</h3>
+                        <p>
+                            Salo Magazine doesn't operate in isolation—it's strategically connected 
+                            to my other ventures. Sewcart provides deep industry insights and customer 
+                            connections, while Salo.com.ng offers the technical infrastructure for growth.
+                        </p>
+                        <p>
+                            This integration creates multiple touchpoints with the fashion community, 
+                            from serving their material needs through Sewcart, to showcasing their work 
+                            in the magazine, to providing digital tools through Salo.
+                        </p>
+                    </div>
+                    <div class="vision-highlights">
+                        <h4 style="color: #ff6b9d; margin-bottom: 2rem; font-size: 1.5rem;">Cross-Platform Benefits</h4>
+                        <div class="highlight-item">
+                            <i class="fas fa-store highlight-icon"></i>
+                            <div>
+                                <strong>Sewcart Connection</strong><br>
+                                Direct access to fashion professionals and industry insights
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <i class="fas fa-code highlight-icon"></i>
+                            <div>
+                                <strong>SALO Integration</strong><br>
+                                Technical platform capabilities and user base synergies
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <i class="fas fa-rocket highlight-icon"></i>
+                            <div>
+                                <strong>Growth Acceleration</strong><br>
+                                Shared marketing, cross-promotion, and combined value proposition
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Explore Salo Magazine</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                    Discover Nigerian fashion excellence and join our writer community
+                </p>
+                <a href="https://magazine.salo.com.ng" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                    Read Magazine
+                </a>
+                <a href="contact.html" class="btn btn-outline">
+                    <i class="fas fa-pen" style="margin-right: 0.5rem;"></i>
+                    Join as Writer
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fa-solid fa-briefcase"></i> Business Ventures</h4>
+                    <p><a href="sewcart.html"><i class="fa-solid fa-scissors"></i> Sewcart Retail</a></p>
+                    <p><a href="salo.html"><i class="fa-solid fa-globe"></i> SALO</a></p>
+                    <p><a href="magazine.html"><i class="fa-solid fa-newspaper"></i> Magazine</a></p>
+                    <p><a href="publishing.html"><i class="fa-solid fa-robot"></i> AI-Assisted Publishing</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fa-solid fa-cogs"></i> Services</h4>
+                    <p><a href="services.html"><i class="fa-solid fa-lightbulb"></i> Business Consulting</a></p>
+                    <p><a href="services.html"><i class="fa-solid fa-chart-line"></i> Digital Strategy</a></p>
+                    <p><a href="services.html"><i class="fa-solid fa-handshake"></i> Partnership Opportunities</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fa-solid fa-address-card"></i> Connect</h4>
+                    <p><a href="contact.html"><i class="fa-solid fa-envelope"></i> Business Inquiries</a></p>
+                    <p><a href="blog.html"><i class="fa-solid fa-pen"></i> Read My Blog</a></p>
+                    <p><i class="fa-solid fa-location-dot"></i> Kaduna, Nigeria</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                © 2025 Portfolio. Built with passion for innovation.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading animation delay
+            const loadingElements = document.querySelectorAll('.loading');
+            loadingElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, index * 200);
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+
+            header.style.transition = 'transform 0.3s ease-in-out';
+
+            // Parallax effect for hero background
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.project-hero');
+                const rate = scrolled * -0.5;
+                
+                if (hero) {
+                    hero.style.transform = `translateY(${rate}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
